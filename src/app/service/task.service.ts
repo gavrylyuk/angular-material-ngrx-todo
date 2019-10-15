@@ -2,13 +2,11 @@ import { Injectable } from '@angular/core';
 import { TASKS } from './tasks-mock';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class TaskService {
-
 
   constructor() { }
 
@@ -30,9 +28,10 @@ export class TaskService {
     });
   }
 
-  deleteTask() {}
+  editTask(task) {
+    console.log(task);
+  }
 
-  editTask() {}
+  deleteTask(taskId) {}
 
-  complete() {}
 }

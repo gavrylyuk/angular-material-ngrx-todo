@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ITask } from 'src/app/service/task.interface';
 import { TaskService } from 'src/app/service/task.service';
+import { MatDialog } from '@angular/material/dialog';
+import { EditWindowComponent } from './edit-window/edit-window.component';
 
 @Component({
   selector: 'app-admin-panel',
@@ -8,14 +10,32 @@ import { TaskService } from 'src/app/service/task.service';
   styleUrls: ['./admin-panel.component.css']
 })
 export class AdminPanelComponent implements OnInit {
-  title = 'To Do List';
+  pageTitle = 'To Do List';
   tasks: ITask[];
 
-  constructor(taskService: TaskService) {
+  constructor(
+    public editWindow: MatDialog,
+    private taskService: TaskService
+  ) {
     this.tasks = taskService.getTasks();
   }
 
   ngOnInit() {
+  }
+
+  handleOpenWindow(task: ITask) {
+    const modalWindow = this.editWindow.open(EditWindowComponent, {
+      data: {
+        id: task.id,
+        title: task.title,
+        description: task.description,
+        complete: task.complete
+      }
+    });
+    modalWindow.afterClosed().subscribe(result => {
+
+      this.taskService.editTask(result);
+    });
   }
 
 }
