@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import {
   MatCardModule,
   MatCheckboxModule,
-  MatListModule,
+  MatToolbarModule,
   MatIconModule,
   MatButtonModule,
   MatDialogModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatExpansionModule
 } from '@angular/material';
 
 import { AdminPanelRoutingModule } from './admin-panel-routing.module';
@@ -29,13 +30,14 @@ import { EditWindowComponent } from './edit-window/edit-window.component';
     FormsModule,
     AdminPanelRoutingModule,
     MatCardModule,
-    MatListModule,
+    MatToolbarModule,
     MatCheckboxModule,
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule
   ]
 })
 export class AdminPanelModule { }

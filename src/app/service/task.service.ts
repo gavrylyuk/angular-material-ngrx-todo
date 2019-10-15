@@ -29,7 +29,11 @@ export class TaskService {
   }
 
   editTask(task) {
-    console.log(task);
+    TASKS.forEach((element, index) => {
+      if(element.id === task.id) {
+        TASKS[index] = task;
+      }
+    });
   }
 
   deleteTask(taskId) {}

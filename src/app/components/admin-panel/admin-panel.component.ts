@@ -33,9 +33,14 @@ export class AdminPanelComponent implements OnInit {
       }
     });
     modalWindow.afterClosed().subscribe(result => {
-
-      this.taskService.editTask(result);
+      if (result) {
+        this.taskService.editTask(result);
+      }
     });
+  }
+
+  handleClickDelete(taskId: number) {
+    this.taskService.deleteTask(taskId);
   }
 
 }
