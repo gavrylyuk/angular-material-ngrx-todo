@@ -1,1 +1,12 @@
-<p>admin-panel works!</p>
+<mat-card>
+    <mat-card-header>
+      <mat-card-title> {{title}} </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let task of tasks">
+          {{this.task.id}} - {{this.task.title}}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
