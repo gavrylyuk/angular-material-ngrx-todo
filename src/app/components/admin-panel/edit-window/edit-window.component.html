@@ -1,4 +1,4 @@
-<h3 mat-dialog-title>Task No {{data.id}}</h3>
+<h3 mat-dialog-title>Task ID {{data.id}}</h3>
 <div mat-dialog-content class="form-input">
     <mat-form-field>
         <input matInput [(ngModel)]="data.title">
@@ -10,5 +10,5 @@
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="handleClickCancel()">Cancel</button>
-    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Change</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Submit</button>
 </div>

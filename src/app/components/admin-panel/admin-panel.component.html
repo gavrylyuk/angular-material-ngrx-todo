@@ -3,7 +3,7 @@
 <mat-accordion>
     <mat-expansion-panel *ngFor="let task of tasks">
       <mat-expansion-panel-header>
-        <mat-panel-title>No.{{this.task.id}}</mat-panel-title>
+        <mat-panel-title>ID {{this.task.id}}</mat-panel-title>
         <mat-panel-description class="task-title">
           <span>{{this.task.title}}</span>
           <mat-icon *ngIf="this.task.complete; else taskIncomplete">done</mat-icon> 
@@ -13,8 +13,8 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <p>{{this.task.description}}</p>
-      <button mat-button (click)="handleOpenWindow(this.task)">Edit task</button>
-      <button mat-button (click)="handleClickDelete(this.task)">Delete task</button>
+      <button mat-button (click)="handleClickEdit(this.task)">Edit task</button>
+      <button mat-button (click)="handleClickDelete(this.task.id)">Delete task</button>
   </mat-expansion-panel>
-  <button mat-button>Add new task</button>
+  <button mat-button (click)="handleClickAdd()">Add new task</button>
 </mat-accordion>

@@ -23,7 +23,7 @@ export class AdminPanelComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleOpenWindow(task: ITask) {
+  handleClickEdit(task: ITask) {
     const modalWindow = this.editWindow.open(EditWindowComponent, {
       data: {
         id: task.id,
@@ -41,6 +41,24 @@ export class AdminPanelComponent implements OnInit {
 
   handleClickDelete(taskId: number) {
     this.taskService.deleteTask(taskId);
+  }
+
+  handleClickAdd() {
+    const nextId = this.tasks.reduce((prev, current) => (prev.id > current.id) ? prev : current).id + 1;
+
+    const modalWindow = this.editWindow.open(EditWindowComponent, {
+      data: {
+        id: nextId,
+        title: '',
+        description: '',
+        complete: false
+      }
+    });
+    modalWindow.afterClosed().subscribe(result => {
+      if (result) {
+        this.taskService.addTask(result);
+      }
+    });
   }
 
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TASKS } from './tasks-mock';
+import { element } from 'protractor';
 
 
 @Injectable({
@@ -14,28 +15,25 @@ export class TaskService {
     return TASKS;
   }
 
-  addTask(
-    id: number,
-    title: string,
-    description: string,
-    comolete: boolean
-  ) {
-    return TASKS.push({
-      id,
-      title,
-      description,
-      complete: false
-    });
+  addTask(newTask) {
+    return TASKS.push(newTask);
   }
 
   editTask(task) {
     TASKS.forEach((element, index) => {
-      if(element.id === task.id) {
+      if (element.id === task.id) {
         TASKS[index] = task;
       }
     });
   }
 
-  deleteTask(taskId) {}
+  deleteTask(taskId: number) {
+
+    TASKS.splice(TASKS.findIndex(function(i) {
+      return i.id === taskId;
+    }), 1);
+
+    return TASKS;
+  }
 
 }
