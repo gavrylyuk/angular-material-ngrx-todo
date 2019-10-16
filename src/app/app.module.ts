@@ -9,6 +9,8 @@ import { reducers, metaReducers} from './reducers';
 import {AdminPanelModule} from './components/admin-panel/admin-panel.module';
 import {AuthorizationModule} from './components/authorization/authorization.module';
 import {UserDashboardModule} from './components/user-dashboard/user-dashboard.module';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +27,8 @@ import {UserDashboardModule} from './components/user-dashboard/user-dashboard.mo
         strictStateImmutability: true,
         strictActionImmutability: true
       }
-    })
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { AuthorizationRoutingModule } from './authorization-routing.module';
 import { AuthorizationComponent } from './authorization.component';
+import { MatButtonModule } from '@angular/material';
 
 
 @NgModule({
   declarations: [AuthorizationComponent],
   imports: [
     CommonModule,
-    AuthorizationRoutingModule
+    AuthorizationRoutingModule,
+    MatButtonModule
   ]
 })
 export class AuthorizationModule { }

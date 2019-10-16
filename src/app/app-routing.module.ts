@@ -12,14 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./components/authorization/authorization.module').then(mod => mod.AuthorizationModule)
   },
   {
-    path: 'admin',
-    loadChildren: () => import('./components/admin-panel/admin-panel.module').then(mod => mod.AdminPanelModule)
-  },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./components/user-dashboard/user-dashboard.module').then(mod => mod.UserDashboardModule)
-  },
-  {
     path: '**',
     redirectTo: 'authorization', pathMatch: 'full'
   }
