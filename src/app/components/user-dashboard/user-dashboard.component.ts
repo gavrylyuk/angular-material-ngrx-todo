@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { ITask } from 'src/app/service/task.interface';
+import { ITask } from 'src/app/models/task.interface';
 import { TaskService } from 'src/app/service/task.service';
 import { DescriptionWindowComponent } from './description-window/description-window.component';
 

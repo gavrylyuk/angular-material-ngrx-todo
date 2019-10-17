@@ -1,4 +1,4 @@
-import {ITask} from './task.interface';
+import {ITask} from '../app/models/task.interface';
 
 export const TASKS: ITask[] = [
     {id: 1, title: 'First task', description: 'description 333', complete: false},

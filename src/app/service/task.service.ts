@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TASKS } from './tasks-mock';
-import { element } from 'protractor';
+import { TASKS } from '../../assets/tasks-mock';
 
 
 @Injectable({
@@ -29,7 +28,7 @@ export class TaskService {
 
   deleteTask(taskId: number) {
 
-    TASKS.splice(TASKS.findIndex(function(i) {
+    TASKS.splice(TASKS.findIndex( i => {
       return i.id === taskId;
     }), 1);
 

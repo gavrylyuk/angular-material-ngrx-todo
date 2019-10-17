@@ -13,10 +13,11 @@ import {
   MatToolbarModule
 } from '@angular/material';
 
+
 @NgModule({
   declarations: [
     UserDashboardComponent,
-    DescriptionWindowComponent
+    DescriptionWindowComponent,
   ],
   entryComponents: [
     DescriptionWindowComponent

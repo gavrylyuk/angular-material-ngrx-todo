@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthorizationComponent } from './components/authorization/authorization.component';
 
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'authorization', pathMatch: 'full'
-  },
-  {
     path: 'authorization',
-    loadChildren: () => import('./components/authorization/authorization.module').then(mod => mod.AuthorizationModule)
+    component: AuthorizationComponent
   },
   {
-    path: '**',
-    redirectTo: 'authorization', pathMatch: 'full'
-  }
+    path: '',
+    redirectTo: 'todo',
+    pathMatch: 'full'
+  },
+  // {
+  //   path: '**',
+  //   redirectTo: ''
+  // }
 ];
 
 @NgModule({
@@ -23,3 +25,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

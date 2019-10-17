@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITask } from 'src/app/service/task.interface';
+import { ITask } from 'src/app/models/task.interface';
 import { TaskService } from 'src/app/service/task.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditWindowComponent } from './edit-window/edit-window.component';
