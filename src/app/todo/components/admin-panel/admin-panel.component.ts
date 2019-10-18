@@ -49,6 +49,8 @@ export class AdminPanelComponent implements OnInit {
     const nextId = this.tasks.reduce((prev, current) => (prev.id > current.id) ? prev : current).id + 1;
 
     const modalWindow = this.editWindow.open(EditWindowComponent, {
+      width: '50%',
+      height: '35%',
       data: {
         id: nextId,
         title: '',
