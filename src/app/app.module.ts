@@ -3,13 +3,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StoreModule } from '@ngrx/store';
-// import { reducers, metaReducers} from './store/reducers';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
-import { MainPageModule } from './components/main-page/main-page.module';
-import { AuthorizationModule } from './components/authorization/authorization.module';
-
+import { TodoModule } from './todo/todo.module';
+// import { StoreModule } from '@ngrx/store';
+// import { reducers, metaReducers } from './todo/store/reducers';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+// import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -17,9 +15,8 @@ import { AuthorizationModule } from './components/authorization/authorization.mo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MainPageModule,
-    AuthorizationModule,
     BrowserAnimationsModule,
+    TodoModule,
     // StoreModule.forRoot(reducers, {
     //   metaReducers,
     //   runtimeChecks: {
@@ -27,7 +24,7 @@ import { AuthorizationModule } from './components/authorization/authorization.mo
     //     strictActionImmutability: true
     //   }
     // }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

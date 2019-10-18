@@ -10,7 +10,7 @@ export class EditWindowComponent implements OnInit {
 
   constructor(
     public dialog: MatDialogRef<EditWindowComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: object
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit() {

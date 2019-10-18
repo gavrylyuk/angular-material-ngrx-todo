@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { TASKS } from '../../assets/tasks-mock';
+import { TASKS } from './tasks-mock';
+import { ITask } from '../models/task.interface';
 
 
 @Injectable({
@@ -14,11 +15,11 @@ export class TaskService {
     return TASKS;
   }
 
-  addTask(newTask) {
+  addTask(newTask: ITask) {
     return TASKS.push(newTask);
   }
 
-  editTask(task) {
+  editTask(task: ITask) {
     TASKS.forEach((element, index) => {
       if (element.id === task.id) {
         TASKS[index] = task;
