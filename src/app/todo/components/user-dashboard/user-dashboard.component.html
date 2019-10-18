@@ -1,0 +1,32 @@
+<mat-toolbar>User Dashboard</mat-toolbar>
+
+<mat-table [dataSource]="tasks" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Number">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Title">
+      <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Description">
+      <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+          <button mat-button *ngIf="element.description" (click)="handleOpenWindow(element.id, element.description)">Show Description</button>
+      </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Complete">
+      <mat-header-cell *matHeaderCellDef>Complete</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+          <mat-icon *ngIf="element.complete">done</mat-icon>
+      </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="columns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+  </mat-table>
+  

@@ -1,0 +1,14 @@
+<h3 mat-dialog-title>Task ID {{data.id}}</h3>
+<div mat-dialog-content class="form-input">
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.title" placeholder="Task Title">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.description" placeholder="Task Description">
+    </mat-form-field>
+    <mat-checkbox [(ngModel)]="data.complete">Complete</mat-checkbox>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="handleClickCancel()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Submit</button>
+</div>
