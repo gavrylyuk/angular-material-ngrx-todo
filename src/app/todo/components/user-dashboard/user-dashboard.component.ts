@@ -21,11 +21,10 @@ export class UserDashboardComponent implements OnInit {
   constructor(
     public descriptionWindow: MatDialog,
     private taskService: TaskService,
-  ) {
-    this.tasks = taskService.getTasks();
-  }
+  ) { }
 
   ngOnInit() {
+    this.tasks = this.taskService.getTasks();
   }
 
   handleOpenWindow(id: number, description: string) {

@@ -16,11 +16,10 @@ export class AdminPanelComponent implements OnInit {
   constructor(
     public editWindow: MatDialog,
     private taskService: TaskService
-  ) {
-    this.tasks = taskService.getTasks();
-  }
+  ) { }
 
   ngOnInit() {
+    this.tasks = this.taskService.getTasks();
   }
 
   handleClickEdit(task: ITask) {
